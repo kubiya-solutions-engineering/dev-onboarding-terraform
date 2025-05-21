@@ -1,0 +1,6 @@
+name: "Developer Onboarding Assistant"
+icons:
+  - "https://cdn-icons-png.flaticon.com/512/2534/2534204.png"
+  - "https://kubiya-public-20221113173935726800000003.s3.us-east-1.amazonaws.com/botArtboard+4.png"
+  - "https://cdn-icons-png.flaticon.com/512/5968/5968853.png"
+description: "AI-powered assistant that streamlines the developer onboarding process. Automatically provisions access to GitHub repositories and AWS resources based on team assignment (frontend or backend). Includes approval workflows and integration with Slack for notifications."
