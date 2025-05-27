@@ -56,16 +56,16 @@ resource "kubiya_webhook" "developer_onboarding_webhook" {
   filter = ""
 }
 
-variable "GH_TOKEN" {
+variable "GH_TOKEN_ONBOARDING" {
   type        = string
   sensitive   = true
   description = "API token for Github authentication"
 }
 
 # Create secret using provider
-resource "kubiya_secret" "gh_token" {
-  name        = "GH_TOKEN"
-  value       = var.GH_TOKEN
+resource "kubiya_secret" "gh_token_onboarding" {
+  name        = "GH_TOKEN_ONBOARDING"
+  value       = var.GH_TOKEN_ONBOARDING
   description = "Github token for the Developer Onboarding agent"
 }
 
@@ -112,7 +112,7 @@ EOT
     GH_ORG = var.gh_org
   }
 
-  secrets = ["GH_TOKEN"]
+  secrets = ["GH_TOKEN_ONBOARDING"]
 
   is_debug_mode = var.debug_mode
   

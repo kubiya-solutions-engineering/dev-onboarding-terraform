@@ -7,5 +7,5 @@ description: "AI-powered assistant that streamlines the developer onboarding pro
 secrets:
   - name:  Github Token
     description: "API token for Github authentication."
-    to_env: GH_TOKEN
-    to_var: GH_TOKEN
+    to_env: GH_TOKEN_ONBOARDING
+    to_var: GH_TOKEN_ONBOARDING
