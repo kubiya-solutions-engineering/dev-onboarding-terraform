@@ -36,7 +36,7 @@ resource "kubiya_source" "enforcer_source" {
     okta_client_id     = ""
     okta_private_key   = ""
     okta_token_endpoint = ""
-    opa_policy         = "package kubiya.tool_manager\n\n# Default deny all access\ndefault allow = false\n\n# Define list of restricted tools that require special permissions\nrestricted_tools = {\n    \"github_add_user_to_team\",\n    \"github_add_user\",\n    \"iam_create_user\"\n}\n\n# Explicitly allow the request_tool_access feature\nallow {\n    input.tool.name == \"request_tool_access\"\n}\n\n# Allow everyone to run non-restricted tools\nallow {\n    not restricted_tools[input.tool.name]\n}"
+    opa_policy         = "package kubiya.tool_manager\n\n# Default deny all access\ndefault allow = false\n\n# Define list of restricted tools that require special permissions\nrestricted_tools = {\n    \"onboard_developer_iam_github_create\",\n    \"github_add_user\",\n    \"iam_create_user\"\n}\n\n# Explicitly allow the request_tool_access feature\nallow {\n    input.tool.name == \"request_tool_access\"\n}\n\n# Allow everyone to run non-restricted tools\nallow {\n    not restricted_tools[input.tool.name]\n}"
     opa_runner_name    = var.kubiya_runner
   })
 }
